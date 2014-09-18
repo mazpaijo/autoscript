@@ -48,13 +48,13 @@ Tested on
 * OpenSSH port 22, 143
 * OpenVPN port 1194 tcp
 * Dropbear port 109, 110, 443
-* Squid port 8080 (limit to IP VPS)
+* Squid port 80,8080 (limit to IP VPS)
 * badvpn-udpgw port 7300
 
 ### What's features included
 * Webmin http(s)://[ip]:10000/
-* vnstat http://[ip]/vnstat/
-* MRTG http://[ip]/mrtg/
+* vnstat http://[ip]:8888/vnstat/
+* MRTG http://[ip]:8888/mrtg/
 * Timezone : Asia/Jakarta
 * Fail2Ban : [on]
 * IPv6     : [off]
