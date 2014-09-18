@@ -1,4 +1,4 @@
-Automatic Script Installer by KangArie edited by Mazpaijo
+Automatic Script Installer
 ==========
 
 ## Usage
@@ -65,3 +65,10 @@ Tested on
 * bench-network.sh
 * user-login.sh
 
+
+thanks to
+
+KangArie
+Sivel
+pixelb
+google
