@@ -2,15 +2,27 @@ Automatic Script Installer by KangArie edited by Mazpaijo
 ==========
 
 ## Usage
-### Centos 6 32/64bit
+### Centos 6 32/64bit kvm
 ```
-wget https://raw.github.com/mazpaijo/centos6/master/centos6.sh
-bash centos6.sh
+wget https://raw.github.com/mazpaijo/autoscript/master/centos6-kvm.sh
+bash centos6-kvm.sh.sh
 ```
 Tested on
 * CentOS 6 32 bit
 * CentOS 6 64 bit
-* OpenVZ only
+
+
+## Usage
+### Centos 6 32/64bit ovz
+```
+wget https://raw.github.com/mazpaijo/autoscript/master/centos6-ovz.sh
+bash centos6-ovz.sh
+```
+Tested on
+* CentOS 6 32 bit
+* CentOS 6 64 bit
+* 
+
 
 ### Debian 6 32bit
 ```
