@@ -12,7 +12,6 @@ Tested on
 * CentOS 6 64 bit
 
 
-## Usage
 ### Centos 6 32/64bit ovz
 ```
 wget https://raw.github.com/mazpaijo/autoscript/master/centos6-ovz.sh
