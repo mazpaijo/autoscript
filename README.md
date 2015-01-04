@@ -2,28 +2,40 @@ Automatic Script Installer
 ==========
 
 ## Usage
-### Centos 6 32/64bit kvm
+
+### vnc server for Centos 6 32/64bit kvm /ovz
+```
+wget https://raw.github.com/mazpaijo/autoscript/master/vnc_centos6.sh
+bash vnc_centos6.sh
+```
+Tested on
+* CentOS 6 32 bit kvm / ovz
+* CentOS 6 64 bit kvm / ovz
+
+
+
+### automatic installer for Centos 6 32/64bit kvm 
 ```
 wget https://raw.github.com/mazpaijo/autoscript/master/centos6-kvm.sh
 bash centos6-kvm.sh
 ```
 Tested on
-* CentOS 6 32 bit
-* CentOS 6 64 bit
+* CentOS 6 32 bit kvm
+* CentOS 6 64 bit kvm
 
 
-### Centos 6 32/64bit ovz
+###automatic installer for Centos 6 32/64bit ovz
 ```
 wget https://raw.github.com/mazpaijo/autoscript/master/centos6-ovz.sh
 bash centos6-ovz.sh
 ```
 Tested on
-* CentOS 6 32 bit
-* CentOS 6 64 bit
+* CentOS 6 32 bit ovz
+* CentOS 6 64 bit ovz
 * 
 
 
-### Debian 6 32bit
+###automatic installer for Debian 6 32bit
 ```
 wget https://raw.github.com/mazpaijo/centos6/master/debian6.sh
 bash debian6.sh
@@ -32,7 +44,7 @@ Tested on
 * Debian 6 32 bit
 * OpenVZ only
 
-### Debian 7 32bit
+###automatic installer for Debian 7 32bit
 ```
 wget https://raw.github.com/mazpaijo/centos6/master/debian7.sh
 bash debian7.sh
