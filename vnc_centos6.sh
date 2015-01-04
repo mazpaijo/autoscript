@@ -24,7 +24,17 @@ chkconfig vncserver on
 #create default username & password
 PASS=qwe123;
 useradd sadarvnc
-echo "sadarvnc:$PASS" | vncpasswd
+#echo "sadarvnc:$PASS" | vncpasswd
+
+#!/usr/bin/expect --
+spawn vncpasswd
+expect "Password: "
+send "$PASS\r"
+expect "Verify: "
+send "$PASS\r"
+expect "$"
+
+
 
 echo 'VNCSERVERS="1:sadarvnc"' >> /etc/sysconfig/vncservers
 echo 'VNCSERVERARGS[1]="-geometry 800x600"' >> /etc/sysconfig/vncservers
