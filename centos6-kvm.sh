@@ -70,7 +70,7 @@ cd
 wget -O /etc/nginx/nginx.conf "https://raw.github.com/mazpaijo/autoscript/master/conf/nginx.conf"
 sed -i 's/www-data/nginx/g' /etc/nginx/nginx.conf
 mkdir -p /home/vps/public_html
-echo "<pre>iin halaman home biasa" > /home/vps/public_html/index.html
+echo "<pre>ini halaman home biasa" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 rm /etc/nginx/conf.d/*
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.github.com/mazpaijo/autoscript/master/conf/vps.conf"
@@ -122,24 +122,24 @@ chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 # install mrtg
-cd /etc/snmp/
-wget -O /etc/snmp/snmpd.conf "https://raw.github.com/mazpaijo/autoscript/master/conf/snmpd.conf"
-wget -O /root/mrtg-mem.sh "https://raw.github.com/mazpaijo/autoscript/master/conf/mrtg-mem.sh"
-chmod +x /root/mrtg-mem.sh
-service snmpd restart
-chkconfig snmpd on
-snmpwalk -v 1 -c public localhost | tail
-mkdir -p /home/vps/public_html/mrtg
-cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
-curl "https://raw.github.com/mazpaijo/autoscript/master/conf/mrtg.conf" >> /etc/mrtg/mrtg.cfg
-sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
-sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
-indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
-echo "0-59/5 * * * * root env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg" > /etc/cron.d/mrtg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-cd
+#cd /etc/snmp/
+#wget -O /etc/snmp/snmpd.conf "https://raw.github.com/mazpaijo/autoscript/master/conf/snmpd.conf"
+#wget -O /root/mrtg-mem.sh "https://raw.github.com/mazpaijo/autoscript/master/conf/mrtg-mem.sh"
+#chmod +x /root/mrtg-mem.sh
+#service snmpd restart
+#chkconfig snmpd on
+#snmpwalk -v 1 -c public localhost | tail
+#mkdir -p /home/vps/public_html/mrtg
+#cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
+#curl "https://raw.github.com/mazpaijo/autoscript/master/conf/mrtg.conf" >> /etc/mrtg/mrtg.cfg
+#sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
+#sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
+#indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
+#echo "0-59/5 * * * * root env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg" > /etc/cron.d/mrtg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#cd
 
 # setting port ssh
 echo "Port 143" >> /etc/ssh/sshd_config
@@ -209,7 +209,7 @@ service nginx start
 service php-fpm start
 service vnstat restart
 service openvpn restart
-service snmpd restart
+#service snmpd restart
 service sshd restart
 service dropbear restart
 service fail2ban restart
