@@ -124,24 +124,24 @@ chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 
 # install mrtg
-cd /etc/snmp/
-wget -O /etc/snmp/snmpd.conf "https://raw.github.com/mazpaijo/centos6/master/conf/snmpd.conf"
-wget -O /root/mrtg-mem.sh "https://raw.github.com/mazpaijo/centos6/master/conf/mrtg-mem.sh"
-chmod +x /root/mrtg-mem.sh
-service snmpd restart
-chkconfig snmpd on
-snmpwalk -v 1 -c public localhost | tail
-mkdir -p /home/vps/public_html/mrtg
-cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
-curl "https://raw.github.com/mazpaijo/centos6/master/conf/mrtg.conf" >> /etc/mrtg/mrtg.cfg
-sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
-sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
-indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
-echo "0-59/5 * * * * root env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg" > /etc/cron.d/mrtg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
-cd
+#cd /etc/snmp/
+#wget -O /etc/snmp/snmpd.conf "https://raw.github.com/mazpaijo/centos6/master/conf/snmpd.conf"
+#wget -O /root/mrtg-mem.sh "https://raw.github.com/mazpaijo/centos6/master/conf/mrtg-mem.sh"
+#chmod +x /root/mrtg-mem.sh
+#service snmpd restart
+#chkconfig snmpd on
+#snmpwalk -v 1 -c public localhost | tail
+#mkdir -p /home/vps/public_html/mrtg
+#cfgmaker --zero-speed 100000000 --global 'WorkDir: /home/vps/public_html/mrtg' --output /etc/mrtg/mrtg.cfg public@localhost
+#curl "https://raw.github.com/mazpaijo/centos6/master/conf/mrtg.conf" >> /etc/mrtg/mrtg.cfg
+#sed -i 's/WorkDir: \/var\/www\/mrtg/# WorkDir: \/var\/www\/mrtg/g' /etc/mrtg/mrtg.cfg
+#sed -i 's/# Options\[_\]: growright, bits/Options\[_\]: growright/g' /etc/mrtg/mrtg.cfg
+#indexmaker --output=/home/vps/public_html/mrtg/index.html /etc/mrtg/mrtg.cfg
+#echo "0-59/5 * * * * root env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg" > /etc/cron.d/mrtg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#cd
 
 # setting port ssh
 echo "Port 143" >> /etc/ssh/sshd_config
@@ -211,7 +211,7 @@ service nginx start
 service php-fpm start
 service vnstat restart
 service openvpn restart
-service snmpd restart
+#service snmpd restart
 service sshd restart
 service dropbear restart
 service fail2ban restart
@@ -222,15 +222,15 @@ chkconfig crond on
 
 # info
 clear
-echo "JualSSH.com | @arieonline | KangArie | 7946F434"
+echo "Mazpaijo -- sadarssh.tk"
 echo "==============================================="
 echo ""
 echo "Service"
 echo "-------"
-echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"
+echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:8888/client.tar)"
 echo "OpenSSH  : 22, 143"
 echo "Dropbear : 109, 110, 443"
-echo "Squid    : 8080 (limit to IP SSH)"
+echo "Squid    : 80, 8080 (limit to IP SSH)"
 echo "badvpn   : badvpn-udpgw port 7300"
 echo ""
 echo "Script"
@@ -247,8 +247,8 @@ echo ""
 echo "Fitur lain"
 echo "----------"
 echo "Webmin   : http://$MYIP:10000/"
-echo "vnstat   : http://$MYIP/vnstat/"
-echo "MRTG     : http://$MYIP/mrtg/"
+echo "vnstat   : http://$MYIP:8888/vnstat/"
+echo "MRTG     : http://$MYIP:8888/mrtg/"
 echo "Timezone : Asia/Jakarta"
 echo "Fail2Ban : [on]"
 echo "IPv6     : [off]"
