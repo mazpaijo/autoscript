@@ -16,7 +16,7 @@ yum -y install gnome-core xfce4 firefox
 yum -y install tigervnc-server
 
 #install dependency
-yum install xorg-x11-fonts-Type1
+yum -y install xorg-x11-fonts-Type1
 
 #start vnc server on boot
 chkconfig vncserver on
