@@ -22,7 +22,7 @@ yum -y install xorg-x11-fonts-Type1
 chkconfig vncserver on
 
 #create default username & password
-PASS=`qwe123`;
+PASS=qwe123;
 useradd sadarvnc
 echo "sadarvnc:$PASS" | vncpasswd
 
