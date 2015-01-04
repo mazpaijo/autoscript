@@ -5,7 +5,7 @@ Automatic Script Installer
 ### Centos 6 32/64bit kvm
 ```
 wget https://raw.github.com/mazpaijo/autoscript/master/centos6-kvm.sh
-bash centos6-kvm.sh.sh
+bash centos6-kvm.sh
 ```
 Tested on
 * CentOS 6 32 bit
